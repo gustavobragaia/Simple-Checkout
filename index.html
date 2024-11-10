@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pagamento com Cartão de Crédito</title>
+
+</head>
+<body>
+
+<div class="form-container">
+    <form id="paymentForm">
+        <div class="form-group" id="shipping">
+            <h2>Confirme endereço de entrega.</h2>
+            <p>Seu produto será entregue de 3 a 14 dias</p>
+            <input placeholder="Nome Completo" type="text" id="name" name="name" required>
+            <input placeholder="Telefone com DDD" type="text" id="phone" name="phone" required>
+            <input placeholder="Email (Opcional)" type="text" id="email" name="email" >
+            <input placeholder="CEP" type="text" id="cep" name="cep" required>
+        </div>
+
+        <div class="form-group" id="shippingData">
+            <input placeholder="Endereço" type="text" id="endereco" name="endereco" required>
+            <input placeholder="Número da residência" type="text" id="numerocasa" name="numerocasa" required>
+            <input placeholder="Complemento" type="text" id="complemento" name="complemento" >
+            <input placeholder="Bairro" type="text" id="bairro" name="bairro" required>
+            <input placeholder="Cidade" type="text" id="cidade" name="cidade" required>
+            <input placeholder="Estado (UF)" type="text" id="estadouf" name="estadouf" required>
+        </div>
+
+        <div class="form-group" id="paymentData">
+            <div></div>
+            <input placeholder="Número do Cartão" type="text" id="cardNumber" name="cardNumber" required>
+            <input placeholder="Nome Completo" type="text" id="cardName" name="cardName" required>
+            <div class="cardmmyy">
+                <select placeholder="Mês Validade" name="cardMonth" id="cardMonth">
+                    <option value ></option>
+                    <option value="01">1 | Janeiro</option>
+                    <option value="02">2 | Fevereiro</option>
+                    <option value="03">3 | Março</option>
+                    <option value="04">4 | Abril</option>
+                    <option value="05">5 | Maio</option>
+                    <option value="06">6 | Junho</option>
+                    <option value="07">7 | Julho</option>
+                    <option value="08">8 | Agosto</option>
+                    <option value="09">9 | Setembro</option>
+                    <option value="10">10 | Outubro</option>
+                    <option value="11">11 | Novembro</option>
+                    <option value="12">12 | Dezembro</option>
+                </select> 
+                <select aria-placeholder="Ano" name="cardYear" id="cardYear">
+                    <option value="24">2024</option>
+                    <option value="25">2025</option>
+                    <option value="26">2026</option>
+                    <option value="27">2027</option>
+                    <option value="28">2028</option>
+                    <option value="29">2029</option>
+                    <option value="30">2030</option>
+                    <option value="31">2031</option>
+                    <option value="32">2032</option>
+                    <option value="33">2033</option>
+                    <option value="34">2034</option>
+                </select>                 
+            </div>
+            <select name="cardInstallments" id="cardInstallments">
+                <option value="1">1x</option>
+                <option value="2">2x</option>
+                <option value="3">3x</option>
+                <option value="4">4x</option>
+                <option value="5">5x</option>
+                <option value="6">6x</option>
+            </select>
+            <input placeholder="CVV" type="text" id="cardCVV" name="cardCVV" maxlength="3" required>
+            <input placeholder="CPF Titular" type="text" id="cardCPF" name="cardCPF" required>
+
+            <button type="submit">FINALIZAR COMPRA</button>
+        </div>
+
+    </form>
+    <div class="message" id="message"></div>
+</div>
+<script src="./scripts.js"></script>
+</body>
+</html>
