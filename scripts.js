@@ -51,7 +51,7 @@ document.getElementById('paymentForm').addEventListener('submit', async function
     cardExpiration = `${cardMonth.value}/${cardYear.value}`
 
     const cardData = {
-        "amount": 'z',
+        "amount": '50000',
         "offer_hash": "afrki", // hash de uma oferta
         "payment_method": "credit_card", // credit_card, billet, pix
         "card": {
@@ -103,8 +103,13 @@ document.getElementById('paymentForm').addEventListener('submit', async function
         });
         
         const result = await response.json();
-        document.getElementById('message').textContent = result.message;
-        paymentAccepted()
+        console.log(result.payment_status)
+        if (result.payment_status === "paid"){
+            document.getElementById('message').textContent = result.message;
+            paymentAccepted()
+        }else{
+            paymentNotAccepted()
+        }
 
 
     } catch (error) {
@@ -215,7 +220,10 @@ namePerson.oninput = () => {
 }
 //end input verifications~
 
-
+// display all infos of payment
+function displayInfo(){
+    console.log()
+}
 // show popup when payment is accepted
 function paymentAccepted(){
     popupPaymentAccepted.style.display ="flex"
@@ -225,13 +233,13 @@ function paymentAccepted(){
 
 function paymentNotAccepted(){
     popupPaymentNotAccepted.style.display ="flex"
-    popupNamePaymentNotAccepted.textContent = `${namePerson.value}, houve um problema no pagamento. Revise os campos.`;
+    popupNamePaymentNotAccepted.textContent = `${namePerson.value}, houve um problema no pagamento. Revise os campos novamente.`;
     formGlobal.classList.add("afterpayment");
-
+    
      //remove popup after 3s
      setTimeout  (() =>{
         popupPaymentNotAccepted.style.display ="none"
         formGlobal.classList.remove("afterpayment");
-    }, 2000)
+    }, 3000)
 }
 

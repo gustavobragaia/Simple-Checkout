@@ -230,7 +230,7 @@ iframe{
     display: flex;
     border: 1px solid #cfcfcf;
     border-radius: 10px;
-    padding: 1;
+    padding: 10px;
 }
 .product-labels{
     display: flex;
