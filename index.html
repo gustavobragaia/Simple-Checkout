@@ -9,77 +9,194 @@
 </head>
 <body>
 
-<div class="form-container">
-    <form id="paymentForm">
+<div class="form-container" id="form-container">
+    <div class="bgwithimg">
+        <img src="/img/j8hwhabqhkgkvx2lp6wwnmrrj.jfif" alt="" srcset="">
+    </div>
+    <form id="paymentForm" autocomplete="on">
+
         <div class="form-group" id="shipping">
             <h2>Confirme endereço de entrega.</h2>
             <p>Seu produto será entregue de 3 a 14 dias</p>
-            <input placeholder="Nome Completo" type="text" id="name" name="name" required>
-            <input placeholder="Telefone com DDD" type="text" id="phone" name="phone" required>
-            <input placeholder="Email (Opcional)" type="text" id="email" name="email" >
-            <input placeholder="CEP" type="text" id="cep" name="cep" required>
-        </div>
-
-        <div class="form-group" id="shippingData">
-            <input placeholder="Endereço" type="text" id="endereco" name="endereco" required>
-            <input placeholder="Número da residência" type="text" id="numerocasa" name="numerocasa" required>
-            <input placeholder="Complemento" type="text" id="complemento" name="complemento" >
-            <input placeholder="Bairro" type="text" id="bairro" name="bairro" required>
-            <input placeholder="Cidade" type="text" id="cidade" name="cidade" required>
-            <input placeholder="Estado (UF)" type="text" id="estadouf" name="estadouf" required>
-        </div>
-
-        <div class="form-group" id="paymentData">
-            <div></div>
-            <input placeholder="Número do Cartão" type="text" id="cardNumber" name="cardNumber" required>
-            <input placeholder="Nome Completo" type="text" id="cardName" name="cardName" required>
-            <div class="cardmmyy">
-                <select placeholder="Mês Validade" name="cardMonth" id="cardMonth">
-                    <option value ></option>
-                    <option value="01">1 | Janeiro</option>
-                    <option value="02">2 | Fevereiro</option>
-                    <option value="03">3 | Março</option>
-                    <option value="04">4 | Abril</option>
-                    <option value="05">5 | Maio</option>
-                    <option value="06">6 | Junho</option>
-                    <option value="07">7 | Julho</option>
-                    <option value="08">8 | Agosto</option>
-                    <option value="09">9 | Setembro</option>
-                    <option value="10">10 | Outubro</option>
-                    <option value="11">11 | Novembro</option>
-                    <option value="12">12 | Dezembro</option>
-                </select> 
-                <select aria-placeholder="Ano" name="cardYear" id="cardYear">
-                    <option value="24">2024</option>
-                    <option value="25">2025</option>
-                    <option value="26">2026</option>
-                    <option value="27">2027</option>
-                    <option value="28">2028</option>
-                    <option value="29">2029</option>
-                    <option value="30">2030</option>
-                    <option value="31">2031</option>
-                    <option value="32">2032</option>
-                    <option value="33">2033</option>
-                    <option value="34">2034</option>
-                </select>                 
+        
+            <div class="input-container">
+                <input class="text-input" placeholder="Nome Completo" type="text" id="name" name="name" required>
+                <label class="label" for="name">Nome Completo</label>
             </div>
-            <select name="cardInstallments" id="cardInstallments">
-                <option value="1">1x</option>
-                <option value="2">2x</option>
-                <option value="3">3x</option>
-                <option value="4">4x</option>
-                <option value="5">5x</option>
-                <option value="6">6x</option>
-            </select>
-            <input placeholder="CVV" type="text" id="cardCVV" name="cardCVV" maxlength="3" required>
-            <input placeholder="CPF Titular" type="text" id="cardCPF" name="cardCPF" required>
 
-            <button type="submit">FINALIZAR COMPRA</button>
+            <div class="input-container">
+                <input class="text-input" placeholder="Nome Completo" type="text" id="phone" name="phone" required>
+                <label class="label" for="phone">Telefone com DDD</label>
+            </div>
+
+            <div class="input-container">
+                <input class="text-input"  placeholder="Email (Opcional)" type="text" id="email" name="email">
+                <label class="label" for="email">Email (Opcional)</label>
+            </div>
+
+            <div class="input-container">
+                <input class="text-input" placeholder="CEP" type="text" id="cep" name="cep" maxlength="9" required>
+                <label class="label" for="cep">CEP</label>
+            </div>
+
+        </div>
+
+        <div class="form-group" id="shippingData"   >
+
+            <div class="input-container">
+                <input class="text-input" placeholder="Endereço" type="text" id="endereco" name="endereco" required>
+                <label class="label" for="endereco">Endereço</label>
+            </div>
+
+            <div class="input-container">
+                <input class="text-input" placeholder="Número da residência" type="text" id="numerocasa" name="numerocasa" required>
+                <label class="label" for="numerocasa">Número da residência</label>
+            </div>
+            
+            <div class="input-container">
+                <input class="text-input"  placeholder="Complemento" type="text" id="complemento" name="complemento">
+                <label class="label" for="complemento">Complemento</label>
+            </div>
+    
+            <div class="input-container">
+                <input class="text-input"  placeholder="Bairro" type="text" id="bairro" name="bairro">
+                <label class="label" for="bairro">Bairro</label>
+            </div>
+        
+            <div class="input-container">
+                <input class="text-input"  placeholder="Cidade" type="text" id="cidade" name="cidade" required>
+                <label class="label" for="cidade">Cidade</label>
+            </div>
+
+            <div class="input-container">
+                <input class="text-input"  placeholder="Estado (UF)" type="text" id="estadouf" name="estadouf" maxlength="9" required>
+                <label class="label" for="estadouf">Estado (UF)</label>
+            </div>
+
+            <button id="gopayment">PAGAMENTO</button>
+        </div>
+        
+        <div class="form-group" id="paymentData"  >
+            <div class="product-container">
+                
+                <h3>Você está adquirindo:</h3>
+                
+                <div class="product-info">
+                    <img src="./img/frasco.webp" alt="frasco" srcset="">
+                    <div class="product-labels">
+                        <p class="product-title">Amostra Grátis, pague só o frete</p>
+                        <p class="price">R$ 30,00</p>
+                        
+                    </div>
+                </div>
+                <div class="card">
+                    <input type="radio" checked name="cardOpt" id="cardOpt">
+                    <img src="./img/card.png" style="width: 20px; margin-top: -5px" alt="card" >
+                    <label for="cardOpt">Cartão de Crédito</label>
+                </div>
+            </div>
+            <div class="input-container">
+                <input class="text-input"  placeholder="Número do Cartão" type="text" id="cardNumber" name="cardNumber" autocomplete="cc-number" maxlength="16" required>
+                <label class="label" for="cardNumber">Número do Cartão</label>
+            </div>
+
+            <div class="input-container">
+                <input class="text-input" placeholder="Nome Completo" type="text" id="cardName" name="cardName" autocomplete="cc-name" required>
+                <label class="label" for="cardNumber">Nome Completo</label>
+            </div>
+
+            <div class="cardmmyy">
+
+                <div class="input-container">
+                    <select class="text-input" placeholder="Mês Validade" name="cardMonth" id="cardMonth" autocomplete="cc-exp-month">
+                        <option value=""></option>
+                        <option value="01">1 | Janeiro</option>
+                        <option value="02">2 | Fevereiro</option>
+                        <option value="03">3 | Março</option>
+                        <option value="04">4 | Abril</option>
+                        <option value="05">5 | Maio</option>
+                        <option value="06">6 | Junho</option>
+                        <option value="07">7 | Julho</option>
+                        <option value="08">8 | Agosto</option>
+                        <option value="09">9 | Setembro</option>
+                        <option value="10">10 | Outubro</option>
+                        <option value="11">11 | Novembro</option>
+                        <option value="12">12 | Dezembro</option>
+                    </select> 
+                    <label class="label" for="cardMonth">Mês Validade</label>
+                </div>
+
+                <div class="input-container">
+                    <select class="text-input" aria-placeholder="Ano" name="cardYear" id="cardYear" autocomplete="cc-exp-year">
+                        <option value=""></option>
+                        <option value="24">2024</option>
+                        <option value="25">2025</option>
+                        <option value="26">2026</option>
+                        <option value="27">2027</option>
+                        <option value="28">2028</option>
+                        <option value="29">2029</option>
+                        <option value="30">2030</option>
+                        <option value="31">2031</option>
+                        <option value="32">2032</option>
+                        <option value="33">2033</option>
+                        <option value="34">2034</option>
+                    </select> 
+                    <label class="label" for="cardYear">Ano</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <select class="text-input" name="cardInstallments" id="cardInstallments">
+                    <option value="1">1x</option>
+                    <option value="2">2x</option>
+                    <option value="3">3x</option>
+                    <option value="4">4x</option>
+                    <option value="5">5x</option>
+                    <option value="6">6x</option>
+                </select>
+                <label class="label" for="cardInstallments">Parcelas</label>
+            </div>
+          
+            
+            <div class="input-container">
+                <input class="text-input" placeholder="CVV" type="text" id="cardCVV" name="cardCVV" maxlength="3" autocomplete="cc-csc" required>
+                <label class="label" for="cardCVV">CVV</label>
+            </div>
+
+            <div class="input-container">
+                <input class="text-input"  placeholder="CPF Titular" type="text" id="cardCPF" name="cardCPF" maxlength="11" required>
+                <label class="label" for="cardCPF">CPF Titular</label>
+            </div>
+
+            <button class="submit" type="submit">FINALIZAR COMPRA</button>
+
+            <div class="input-container-Terms">
+            <input type="checkbox" name="accceptTerms" id="accceptTerms" checked>
+            <label for="accceptTerms" style="font-size: 13px;">Concordo com os termos</label>
+            </div>
         </div>
 
     </form>
     <div class="message" id="message"></div>
 </div>
+
+
+    <div id="popupPaymentAccepted" class="container-popup" style="display: none;">
+        <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script><dotlottie-player src="https://lottie.host/de6f95e3-a73d-46ac-8f5a-4cdde56672a1/qNPf1U6h6b.json" background="transparent" speed="1" style="width: 300px; height: 300px" direction="1" playMode="normal" autoplay></dotlottie-player>
+        <div class="textpopupAccepted">
+            <h2>Obrigado!</h2>
+            <p  style="text-align: center;" id="namePaymentAccepted">Nome, seu pagamento foi confirmado!</p>
+        </div>
+    </div>
+
+    <div id="popupPaymentNotAccepted" class="container-popup" style="display: none;">
+        <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script><dotlottie-player src="https://lottie.host/c36e366a-20ea-4caf-8c45-cb7b76fac24f/ca2oInUyiw.json" background="transparent" speed="1" style="width: 200px; height: 200px" direction="1" playMode="normal" autoplay></dotlottie-player>
+        <div class="textpopupNotccepted">
+            <h2>Opss!</h2>
+            <p style="text-align: center;" id="namePaymentNotAccepted">Nome, houve um problema no pagamento. Revise os campos.</p>
+        </div>
+
+
 <script src="./scripts.js"></script>
 </body>
 </html>
